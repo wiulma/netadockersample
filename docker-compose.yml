@@ -1,0 +1,18 @@
+version: '3.7'
+services: 
+    apiservice:
+        container_name: testapi
+        build: 
+            context: ./api
+            dockerfile: Dockerfile
+        ports: 
+          - "5005:5005"
+    uiservice:
+        container_name: testui
+        build: 
+            context: ./front
+            dockerfile: Dockerfile
+        ports: 
+          - "5006:80"
+        depends_on: 
+          - apiservice

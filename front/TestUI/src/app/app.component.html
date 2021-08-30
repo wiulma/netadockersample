@@ -1,0 +1,7 @@
+<div class="grid-container">
+  <div class="grid-item" *ngFor="let weather of data">
+    <strong>{{ weather?.date }}</strong>
+    <span>{{weather?.summary}}</span>
+    <span>{{weather?.temperatureC}}</span>
+  </div>
+</div>
